@@ -15,6 +15,8 @@ import java.text.SimpleDateFormat;
  *
  * @author TOSHIBA
  */
+
+
 public class RumahSakit {
 
     /**
@@ -156,7 +158,6 @@ public class RumahSakit {
         
         
     }
-    
     static void cetakDokter(Dokter dokter) {
         System.out.println("\n\tInformasi dokter yang menangani pasien\n");
         System.out.println("Nama dokter\t: " + dokter.getNama());
@@ -164,14 +165,12 @@ public class RumahSakit {
         System.out.println("Spesialis\t: " + dokter.getSpesialis());
         System.out.println("No. Telpon\t: " + dokter.getNoTlpn());
     }
-    
     static void cetakPerawat(Perawat perawat) {
         System.out.println("\n\tInformasi perawat yang merawat pasien\n");
         System.out.println("Nama perawat\t: " + perawat.getNama());
         System.out.println("No. ID\t\t: " + perawat.getId());
         System.out.println("Shift\t\t: " + perawat.getShift());
     }
-    
     static void cetakPasien(Pasien pasien) {
         System.out.println("\n\tInformasi pasien\n");
         System.out.println("Nama pasien\t: " + pasien.getNama());
@@ -181,7 +180,6 @@ public class RumahSakit {
         System.out.println("Penyakit\t: " + pasien.getPenyakit());
         System.out.println("Riwayat Kesehatan\t: " + pasien.getRiwayatPenyakit());
     }
-    
     static void cetakObat(Obat obat) {
         System.out.println("\n\tInformasi obat\n");
         System.out.println("Nama obat\t\t: " + obat.getNamaObat());
@@ -197,7 +195,6 @@ public class RumahSakit {
         System.out.println("Tanggal kadaluarsa\t: " + obat.getExpDate());
         System.out.println("Jumlah obat yang tersedia\t: " + obat.getJmlObat());
     }
-    
     static void cetakRuangan(Ruangan ruangan) {
         System.out.println("\n\tInformasi ruangan yang digunakan pasien\n");
         System.out.println("Bagian\t\t\t: " + ruangan.getBagian());
@@ -206,7 +203,6 @@ public class RumahSakit {
         System.out.println("Kategori ruangan\t: " + ruangan.getKategorikeperawatan());
         System.out.println("Fasilitas\t\t: " + ruangan.getFasilitas());
     }
-    
     static void cetakAlamat(Alamat alamat) {
         System.out.println("\tInformasi Alamat yang bersangkutan");
         System.out.println("Jalan\t\t: " + alamat.getJalan());
@@ -214,12 +210,12 @@ public class RumahSakit {
         System.out.println("Provinsi\t: " + alamat.getProvinsi());
         
     }
-    
     static void cetakTtl(Ttl ttl) {
         System.out.println("Tempat lahir\t: " + ttl.getTempat());
         System.out.println("Tanggal lahir\t: " + ttl.getTglLahir());
     }
-}
+    }
+
 
 public class Dokter {
 
@@ -228,28 +224,24 @@ public class Dokter {
     private String spesialis;
     private Alamat alamat;
     private String noTlpn;
-
     /**
      * @return the nama
      */
     public String getNama() {
         return nama;
     }
-
     /**
      * @param nama the nama to set
      */
     public void setNama(String nama) throws Exception {
         this.nama = nama;
     }
-
     /**
      * @return the nidok
      */
     public String getNidok() {
         return nidok;
     }
-
     /**
      * @param nidok the nidok to set
      */
@@ -260,46 +252,38 @@ public class Dokter {
             } else {
                 throw new Exception("Nomor Induk Dokter harus berupa angka");
             }
-
         }
-
     }
-
     /**
      * @return the spesialis
      */
     public String getSpesialis() {
         return spesialis;
     }
-
     /**
      * @param spesialis the spesialis to set
      */
     public void setSpesialis(String spesialis) {
         this.spesialis = spesialis;
     }
-
     /**
      * @return the alamat
      */
     public Alamat getAlamat() {
         return alamat;
     }
-
     /**
      * @param alamat the alamat to set
      */
     public void setAlamat(Alamat alamat) {
         this.alamat = alamat;
     }
-
     /**
      * @return the noTlpn
      */
     public String getNoTlpn() {
         return noTlpn;
     }
-
     /**
      * @param noTlpn the noTlpn to set
      */
@@ -310,11 +294,9 @@ public class Dokter {
             } else {
                 throw new Exception("Nomor Telepon harus berupa angka");
             }
-
         }
-
     }
-}
+    }
 
 
 import java.util.Date;
@@ -332,14 +314,12 @@ public class Obat {
     private String indikasi;
     private String efekSamping;
     private int jmlObat;
-
     /**
      * @return the noBatch
      */
     public String getNoBatch() {
         return noBatch;
     }
-
     /**
      * @param noBatch the noBatch to set
      */
@@ -351,14 +331,12 @@ public class Obat {
         }
         this.noBatch = noBatch;
     }
-
     /**
      * @return the noReg
      */
     public String getNoReg() {
         return noReg;
     }
-
     /**
      * @param noReg the noReg to set
      */
@@ -367,7 +345,6 @@ public class Obat {
             if (Character.isDigit(noReg.charAt(i))) {
                 return;
             }
-
             for (int j = 3; j < 15; j++) {
                 if (!Character.isDigit(noReg.charAt(j))) {
                     return;
@@ -376,148 +353,127 @@ public class Obat {
         }
         this.noReg = noReg;
     }
-
     /**
      * @return the mgfDate
      */
     public Date getMgfDate() {
         return mgfDate;
     }
-
     /**
      * @param mgfDate the mgfDate to set
      */
     public void setMgfDate(Date mgfDate) {
         this.mgfDate = mgfDate;
     }
-
     /**
      * @return the ExpDate
      */
     public Date getExpDate() {
         return expDate;
     }
-
     /**
      * @param ExpDate the ExpDate to set
      */
     public void setExpDate(Date expDate) {
         this.expDate = expDate;
     }
-
     /**
      * @return the namaObat
      */
     public String getNamaObat() {
         return namaObat;
     }
-
     /**
      * @param namaObat the namaObat to set
      */
     public void setNamaObat(String namaObat) {
         this.namaObat = namaObat;
     }
-
     /**
      * @return the jenisObat
      */
     public String getJenisObat() {
         return jenisObat;
     }
-
     /**
      * @param jenisObat the jenisObat to set
      */
     public void setJenisObat(String jenisObat) {
         this.jenisObat = jenisObat;
     }
-
     /**
      * @return the bentukObat
      */
     public String getBentukObat() {
         return bentukObat;
     }
-
     /**
      * @param bentukObat the bentukObat to set
      */
     public void setBentukObat(String bentukObat) {
         this.bentukObat = bentukObat;
     }
-
     /**
      * @return the produsen
      */
     public String getProdusen() {
         return produsen;
     }
-
     /**
      * @param produsen the produsen to set
      */
     public void setProdusen(String produsen) {
         this.produsen = produsen;
     }
-
     /**
      * @return the HET
      */
     public int getHET() {
         return het;
     }
-
     /**
      * @param HET the HET to set
      */
     public void setHET(int het) {
         this.het = het;
     }
-
     /**
      * @return the indikasi
      */
     public String getIndikasi() {
         return indikasi;
     }
-
     /**
      * @param indikasi the indikasi to set
      */
     public void setIndikasi(String indikasi) {
         this.indikasi = indikasi;
     }
-
     /**
      * @return the efekSamping
      */
     public String getEfekSamping() {
         return efekSamping;
     }
-
     /**
      * @param efekSamping the efekSamping to set
      */
     public void setEfekSamping(String efekSamping) {
         this.efekSamping = efekSamping;
     }
-
     /**
      * @return the jmlObat
      */
     public int getJmlObat() {
         return jmlObat;
     }
-
     /**
      * @param jmlObat the jmlObat to set
      */
     public void setJmlObat(int jmlObat) {
-
         this.jmlObat = jmlObat;
     }
-}
+    }
 
 
 public class Pasien {
@@ -530,45 +486,37 @@ public class Pasien {
     private Alamat alamat;
     private String penyakit;
     private String riwayatPenyakit;
-
     /**
      * @return the nama
      */
     public String getNama() {
         return nama;
     }
-
     /**
      * @param nama the nama to set
      */
     public void setNama(String nama) throws Exception {
         this.nama = nama;
-
     }
-
     /**
      * @return the noKode
      */
     public String getNoKode() {
         return noKode;
     }
-
     /**
      * @param noKode the noKode to set
      */
     public void setNoKode(String noKode) {
         Integer.parseInt(noKode);
-
         this.noKode = noKode;
     }
-
     /**
      * @return the jenisKelamin
      */
     public String getJenisKelamin() {
         return jenisKelamin;
     }
-
     /**
      * @param jenisKelamin the jenisKelamin to set
      */
@@ -582,80 +530,66 @@ public class Pasien {
                 break;
             default:
                 throw new Exception("Jenis Kelamin salah");
-
         }
     }
-
     /**
      * @return the ttl
      */
     public Ttl getTtl() {
         return ttl;
     }
-
     /**
      * @param ttl the ttl to set
      */
     public void setTtl(Ttl ttl) {
         this.ttl = ttl;
     }
-
     public int getUsia() {
         return usia;
     }
-
     /**
      * @param usia the usia to set
      */
     public void setUsia(int usia) {
         this.usia = usia;
     }
-
     /**
      * @return the alamat
      */
     public Alamat getAlamat() {
         return alamat;
     }
-
     /**
      * @param alamat the alamat to set
      */
     public void setAlamat(Alamat alamat) {
         this.alamat = alamat;
     }
-
     /**
      * @return the penyakit
      */
     public String getPenyakit() {
         return penyakit;
     }
-
     /**
      * @param penyakit the penyakit to set
      */
     public void setPenyakit(String penyakit) {
         this.penyakit = penyakit;
     }
-
     /**
      * @return the riwayatPenyakit
      */
     public String getRiwayatPenyakit() {
         return riwayatPenyakit;
     }
-
     /**
      * @param riwayatPenyakit the riwayatPenyakit to set
      */
     public void setRiwayatPenyakit(String riwayatPenyakit) {
         this.riwayatPenyakit = riwayatPenyakit;
     }
-    /**
-     * @return the usia
-     */
-}
+    }
 
 
 public class Perawat {
@@ -664,28 +598,24 @@ public class Perawat {
     private String id;
     private String shift;
     private Alamat alamat;
-
     /**
      * @return the nama
      */
     public String getNama() {
         return nama;
     }
-
     /**
      * @param nama the nama to set
      */
     public void setNama(String nama) throws Exception {
         this.nama = nama;
     }
-
     /**
      * @return the id
      */
     public String getId() {
         return id;
     }
-
     /**
      * @param id the id to set
      */
@@ -693,14 +623,12 @@ public class Perawat {
         Integer.parseInt(id);
         this.id = id;
     }
-
     /**
      * @return the shift
      */
     public String getShift() {
         return shift;
     }
-
     /**
      * @param shift the shift to set
      */
@@ -708,28 +636,21 @@ public class Perawat {
         Integer.parseInt(shift);
         this.shift = shift;
     }
-
     /**
      * @return the alamat
      */
     public Alamat getAlamat() {
         return alamat;
     }
-
     /**
      * @param alamat the alamat to set
      */
     public void setAlamat(Alamat alamat) {
         this.alamat = alamat;
     }
-}
+    }
 
 import java.util.Date;
-
-/**
- *
- * @author TOSHIBA
- */
 public class RawatInap {
 
     private Dokter dokter;
@@ -739,105 +660,92 @@ public class RawatInap {
     private Ruangan kamar;
     private Date tglMasuk;
     private Date tglKeluar;
-
     /**
      * @return the dokter
      */
     public Dokter getDokter() {
         return dokter;
     }
-
     /**
      * @param dokter the dokter to set
      */
     public void setDokter(Dokter dokter) {
         this.dokter = dokter;
     }
-
     /**
      * @return the petugas
      */
     public Perawat getPetugas() {
         return petugas;
     }
-
     /**
      * @param petugas the petugas to set
      */
     public void setPetugas(Perawat petugas) {
         this.petugas = petugas;
     }
-
     /**
      * @return the pasien
      */
     public Pasien getPasien() {
         return pasien;
     }
-
     /**
      * @param pasien the pasien to set
      */
     public void setPasien(Pasien pasien) {
         this.pasien = pasien;
     }
-
     /**
      * @return the obat
      */
     public Obat getObat() {
         return obat;
     }
-
     /**
      * @param obat the obat to set
      */
     public void setObat(Obat obat) {
         this.obat = obat;
     }
-
     /**
      * @return the kamar
      */
     public Ruangan getKamar() {
         return kamar;
     }
-
     /**
      * @param kamar the kamar to set
      */
     public void setKamar(Ruangan kamar) {
         this.kamar = kamar;
     }
-
     /**
      * @return the tglMasuk
      */
     public Date getTglMasuk() {
         return tglMasuk;
     }
-
     /**
      * @param tglMasuk the tglMasuk to set
      */
     public void setTglMasuk(Date tglMasuk) {
         this.tglMasuk = tglMasuk;
     }
-
     /**
      * @return the tglKeluar
      */
     public Date getTglKeluar() {
         return tglKeluar;
     }
-
     /**
      * @param tglKeluar the tglKeluar to set
      */
     public void setTglKeluar(Date tglKeluar) {
         this.tglKeluar = tglKeluar;
     }
-}
+    }
+
 
 public class Ruangan {
 
@@ -847,131 +755,108 @@ public class Ruangan {
     private String kategori;
     private String kategorikeperawatan;
     private String fasilitas;
-
     /**
      * @return the bagian
      */
     public String getBagian() {
         return bagian;
     }
-
     /**
      * @param bagian the bagian to set
      */
     public void setBagian(String bagian) {
         this.bagian = bagian;
     }
-
     /**
      * @return the kelas
      */
     public String getKelas() {
         return kelas;
     }
-
     /**
      * @param kelas the kelas to set
      */
     public void setKelas(String kelas) {
         this.kelas = kelas;
     }
-
     /**
      * @return the tarif
      */
     public int getTarif() {
         return tarif;
     }
-
     /**
      * @param tarif the tarif to set
      */
     public void setTarif(int tarif) {
         this.tarif = tarif;
     }
-
     /**
      * @return the kategori
      */
     public String getKategori() {
         return kategori;
     }
-
     /**
      * @param kategori the kategori to set
      */
     public void setKategori(String kategori) {
         this.kategori = kategori;
     }
-
     /**
      * @return the kategorikeperawatan
      */
     public String getKategorikeperawatan() {
         return kategorikeperawatan;
     }
-
     /**
      * @param kategorikeperawatan the kategorikeperawatan to set
      */
     public void setKategorikeperawatan(String kategorikeperawatan) {
         this.kategorikeperawatan = kategorikeperawatan;
     }
-
     /**
      * @return the fasilitas
      */
     public String getFasilitas() {
         return fasilitas;
     }
-
     /**
      * @param fasilitas the fasilitas to set
      */
     public void setFasilitas(String fasilitas) {
         this.fasilitas = fasilitas;
     }
-}
+    }
 
 
 import java.util.Date;
-
-/**
- *
- * @author TOSHIBA
- */
 public class Ttl {
 
     private String tempat;
     private Date tglLahir;
-
     /**
      * @return the tempat
      */
     public String getTempat() {
         return tempat;
     }
-
     /**
      * @param tempat the tempat to set
      */
     public void setTempat(String tempat) {
-
         this.tempat = tempat;
-
     }
-
     /**
      * @return the tglLahir
      */
     public Date getTglLahir() {
         return tglLahir;
     }
-
     /**
      * @param tglLahir the tglLahir to set
      */
     public void setTglLahir(Date tglLahir) {
         this.tglLahir = tglLahir;
     }
-}
+    }
